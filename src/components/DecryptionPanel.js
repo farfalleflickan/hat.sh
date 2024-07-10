@@ -42,6 +42,7 @@ import {
   ListItemText,
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
+import { withBasePath } from '../config/Utils.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -813,7 +814,7 @@ export default function DecryptionPanel() {
           style={{ color: "#fff", textAlign: "center" }}
         >
           <img
-            src="/assets/images/logo2.png"
+            src={withBasePath("/assets/images/logo2.png")}
             width="100"
             height="100"
             alt="hat.sh logo"

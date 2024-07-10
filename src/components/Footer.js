@@ -22,6 +22,7 @@ import { Alert } from "@material-ui/lab";
 import Snackbar from "@material-ui/core/Snackbar";
 import { getTranslations as t } from "../../locales";
 let QRCode = require("qrcode.react");
+import { withBasePath } from '../config/Utils.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -170,7 +171,7 @@ export default function Footer() {
             size="small"
             className={classes.chip}
             avatar={
-              <Avatar src={`/assets/icons/${currAvatar}-logo.png`}></Avatar>
+              <Avatar src={withBasePath(`/assets/icons/${currAvatar}-logo.png`)}></Avatar>
             }
             label="Donations Accepted"
             clickable
@@ -235,7 +236,7 @@ export default function Footer() {
                       renderAs={"canvas"}
                       includeMargin={true}
                       imageSettings={{
-                        src: `/assets/icons/${res.alt}-logo.png`,
+                        src: withBasePath(`/assets/icons/${res.alt}-logo.png`),
                         x: null,
                         y: null,
                         height: 40,
@@ -277,7 +278,7 @@ export default function Footer() {
                 target="_blank"
               >
                 <img
-                  src="/assets/icons/ko-fi.png"
+                  src={withBasePath("/assets/icons/ko-fi.png")}
                   width="200"
                   alt="open collective"
                 ></img>

@@ -10,6 +10,7 @@ import { IconButton, Tooltip, Button, TextField } from "@material-ui/core";
 import { getTranslations as t } from "../../locales";
 import FileCopyIcon from "@material-ui/icons/FileCopy";
 let QRCode = require("qrcode.react");
+import { withBasePath } from '../config/Utils.js';
 
 const useStyles = makeStyles((theme) => ({
   form: {
@@ -97,7 +98,7 @@ const QuickResponseCode = (props) => {
               includeMargin={true}
               renderAs={"canvas"}
               imageSettings={{
-                src: "/assets/icons/qr-logo.png",
+                src: withBasePath("/assets/icons/qr-logo.png"),
                 x: null,
                 y: null,
                 height: 40,

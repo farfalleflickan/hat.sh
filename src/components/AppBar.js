@@ -11,6 +11,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import VersionBadge from "./VersionBadge";
 import Settings from "./Settings";
 import { getTranslations as t } from "../../locales";
+import { withBasePath } from '../config/Utils.js';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -34,7 +35,7 @@ export default function NavAppBar() {
           <Toolbar>
             <Typography variant="h6" className={classes.logo}>
               <a href="/">
-                <img src="/assets/images/logo.png" alt="logo" width="40" />
+                <img src={withBasePath("/assets/images/logo.png")} alt="logo" width="40" />
               </a>
               <VersionBadge />
             </Typography>
