@@ -4,6 +4,7 @@ import LimitedContainer from "../src/views/LimitedContainer";
 import { ThemeProvider } from "@material-ui/styles";
 import { Theme } from "../src/config/Theme";
 import LoadingCom from "../src/components/Loading";
+import { withBasePath } from '../src/config/Utils.js';
 
 const Home = () => {
   const [swReg, setSwReg] = useState();
@@ -28,7 +29,7 @@ const Home = () => {
     //register service worker
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("service-worker.js")
+        .register(withBasePath("/service-worker.js"))
         .then((reg) => {
           reg.update();
           setSwReg(true);
